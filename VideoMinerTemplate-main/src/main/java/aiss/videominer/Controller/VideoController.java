@@ -26,11 +26,7 @@ public class VideoController {
 
     @GetMapping("/videos/{id}")
     public Video findOne(@PathVariable String id){
-        //throws ChannelNotFoundException {
         Optional<Video> video = videoRepository.findById(id);
-        //if (!channel.isPresent()) {
-        //  throw new ChannelNotFoundException();
-        //}
         return video.get();
     }
 

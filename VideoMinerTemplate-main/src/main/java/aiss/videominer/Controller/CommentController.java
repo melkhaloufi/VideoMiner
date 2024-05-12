@@ -27,11 +27,7 @@ public class CommentController {
 
     @GetMapping("/comments/{id}")
     public Comment findOne(@PathVariable String id){
-        //throws ChannelNotFoundException {
         Optional<Comment> comment = commentRepository.findById(id);
-        //if (!channel.isPresent()) {
-        //  throw new ChannelNotFoundException();
-        //}
         return comment.get();
     }
 
